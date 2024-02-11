@@ -16,7 +16,6 @@ html {
     display: flex;
     width: 100%;
     height: fit-content;
-    gap: 14px;
 }
 
 .container {
@@ -28,9 +27,11 @@ html {
 }
 
 .title,
-.language,
-.darkmode,
-.search {
+.section,
+.profile,
+.search,
+.repositories,
+.gits {
     backdrop-filter: blur(40px);
     background: rgba(163, 163, 163, 0.2);
     border-radius: 14px;
@@ -41,6 +42,10 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.section {
+    margin-left: 0.7vw;
 }
 
 
@@ -55,21 +60,52 @@ html {
 }
 
 .titleName {
-    color: #9c9c9c;
+    color: #747474;
 }
 
-.language, .darkmode {
+.section {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 5vw;
+    padding-inline: 1vw;
+}
+
+.login {
+    margin-left: 0.5vw;
+    font-weight: 500;
+    white-space: nowrap;
 }
 
 .icon {
     height: 1.2vw;
 }
 
+.icons {
+    height: 1.6vw;
+    margin-right: 1.3vw;
+    margin-left: 0.4vw;
+}
+
+.icons0 {
+    height: 1.6vw;
+    margin-right: 1vw;
+    margin-left: 0.2vw;
+    margin-bottom: 0.4vw;
+}
+
+.icons1 {
+    height: 1.3vw;
+    margin-right: 1.1vw;
+    margin-left: 0.3vw;
+}
+
 .bar2 {
+    margin-top: 0.8vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.bar {
     margin-top: 0.8vw;
 }
 
@@ -85,4 +121,58 @@ html {
     font-size: 16px;
     border: none;
     background: none;
+}
+
+.profile {
+    width: 35vw;
+    height: 5.5vw;
+    margin-top: 0.8vw;
+    padding-inline: 1.5vw;
+}
+
+.profileImg {
+    height: 3.5vw;
+    padding-right: 1vw;
+}
+
+.div-profile {
+    display: flex;
+    align-items: center;
+}
+
+.headText {
+    font-size: 0.9vw;
+    font-weight: 600;
+}
+
+.text {
+    font-size: 0.9vw;
+    color: #747474;
+    font-weight: 500;
+}
+
+.oneSection {
+    width: 3vw;
+}
+
+.repositories,
+.gits {
+    width: 100%;
+    padding-inline: 1.5vw;
+    height: 5.5vw;
+}
+
+.oneSection {
+    display: flex;
+    width: 35vw;
+    height: fit-content;
+}
+
+.repositories {
+    margin-right: 0.7vw;
+}
+
+.div-RepoGit {
+    display: flex;
+    align-items: center;
 }
