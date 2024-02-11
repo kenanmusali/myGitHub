@@ -1,18 +1,15 @@
 const postsElem = document.querySelector(".users");
 const searchInput = document.querySelector(".input");
 
-
-function fetchImages(searchQuery) {
+function fetchUser(searchQuery) {
     let url = `https://api.github.com/users/${searchQuery}`;
 
-  fetch(url)
+    fetch(url)
     .then((res) => res.json())
-    .then((data) => {
-        postsElem.innerHTML = "";
-
-        data.hits.forEach(users => {
-            postsElem.innerHTML += `
-        <div class="row bar1">
+    .then((user) => {
+        postsElem.innerHTML = `
+               
+            <div class="row bar1">
             <div class="title">
                 <div class="titleNames">
                     <p class="headName">myGitHub</p>
@@ -43,10 +40,10 @@ function fetchImages(searchQuery) {
                     </div>
                     <div class="profile">
                         <div class="div-profile">
-                            <img class="profileImg" src="./Icons/Rectangle 16.png" alt="Profile">
-                            <p class="headText headText1 ">Kenan</p>
+                            <img class="profileImg" src="${user.avatar_url}" alt="Profile">
+                            <p class="headText headText1 ">${user.name}</p>
                         </div>
-                        <p class="text">kenanmusali</p>
+                        <p class="text">${user.login}</p>
                     </div>
 
 
@@ -59,7 +56,7 @@ function fetchImages(searchQuery) {
                                 <img class="icons" src="./Icons/respositories.svg" alt="Repositories">
                                 <p class="headText">Repositories</p>
                             </div>
-                            <p class="text">18</p>
+                            <p class="text">${user.public_repos}</p>
                         </div>
 
                         <div class="gits">
@@ -67,7 +64,7 @@ function fetchImages(searchQuery) {
                                 <img class="icons" src="./Icons/gits.svg" alt="Gits">
                                 <p class="headText">Gits</p>
                             </div>
-                            <p class="text">18</p>
+                            <p class="text">${user.public_gists}</p>
                         </div>
                     </div>
                 </div>
@@ -79,7 +76,7 @@ function fetchImages(searchQuery) {
                                 <img class="icons0" src="./Icons/following.svg" alt="Following">
                                 <p class="headText">Following</p>
                             </div>
-                            <p class="text">18</p>
+                            <p class="text">${user.following}</p>
                         </div>
 
                         <div class="gits">
@@ -87,7 +84,7 @@ function fetchImages(searchQuery) {
                                 <img class="icons1" src="./Icons/followers.svg" alt="Followers">
                                 <p class="headText">Followers</p>
                             </div>
-                            <p class="text">18</p>
+                            <p class="text">${user.followers}</p>
                         </div>
                     </div>
                 </div>
@@ -99,14 +96,14 @@ function fetchImages(searchQuery) {
                                 <img class="icons" src="./Icons/created.svg" alt="Following">
                                 <p class="headText">Created At:</p>
                             </div>
-                            <p class="text">2023-11-05T09:20:39Z</p>
+                            <p class="text">${user.created_at}</p>
                         </div>
                         <div class="div-time">
                             <div class="time">
                                 <img class="icons" src="./Icons/uptaded.svg" alt="Following">
                                 <p class="headText">Uptaded At:</p>
                             </div>
-                            <p class="text">2023-11-05T09:20:39Z</p>
+                            <p class="text">${user.updated_at}</p>
                         </div>
                     </div>
 
@@ -123,27 +120,27 @@ function fetchImages(searchQuery) {
                         <div class="div-divTwoSec">
                             <div class="div-TwoSec">
                                 <p class="one one1">Name</p>
-                                <p class="two">Kenan</p>
+                                <p class="two">${user.name}</p>
                             </div>
                             <div class="div-TwoSec">
                                 <p class="one one2">User Name</p>
-                                <p class="two">Kenan</p>
+                                <p class="two">${user.login}</p>
                             </div>
                             <div class="div-TwoSec">
                                 <p class="one one3">User Bio</p>
-                                <p class="two">Kenan</p>
+                                <p class="two">${user.bio}</p>
                             </div>
                             <div class="div-TwoSec">
                                 <p class="one one4">Company</p>
-                                <p class="two">Kenan</p>
+                                <p class="two">${user.company}</p>
                             </div>
                             <div class="div-TwoSec">
                                 <p class="one one5">Location</p>
-                                <p class="two">Kenan</p>
+                                <p class="two">${user.location}</p>
                             </div>
                             <div class="div-TwoSec">
                                 <p class="one one6">Blog</p>
-                                <p class="two">Kenan</p>
+                                <p class="two">${user.blog}</p>
                             </div>
                         </div>
                     </div>
@@ -154,16 +151,16 @@ function fetchImages(searchQuery) {
                         <div class="div-Alternative">
                             <div class="div-twitter">
                                 <p class="one one7">Twitter (X)</p>
-                                <p class="two">twitterusername</p>
+                                <p class="two">${user.twitter_username}</p>
                             </div>
                             <div class="div-mail">
                                 <div class="div">
                                     <p class="one one8">User Email</p>
-                                    <p class="two two1">twname</p>
+                                    <p class="two two1">${user.email}</p>
                                 </div>
                                 <div class="div">
                                     <p class="one one9">Hireable</p>
-                                    <p class="two two1">twname</p>
+                                    <p class="two two1">${user.hireable}</p>
                                 </div>
                             </div>
                         </div>
@@ -171,40 +168,16 @@ function fetchImages(searchQuery) {
                         <div class="div-following">
                             <p class="follow">Following</p>
                             <div class="div-follows">
-                                <img class="follows" src="./Icons/Rectangle 16.png" alt="User Name"> 
-                                <p class="headText1 headText">Username Id</p>
-                            </div>
-                            <div class="div-follows">
-                                <img class="follows" src="./Icons/Rectangle 16.png" alt="User Name"> 
-                                <p class="headText1 headText">Username Id</p>
-                            </div>
-                            <div class="div-follows">
-                                <img class="follows" src="./Icons/Rectangle 16.png" alt="User Name"> 
-                                <p class="headText1 headText">Username Id</p>
-                            </div>
-                            <div class="div-follows">
-                                <img class="follows" src="./Icons/Rectangle 16.png" alt="User Name"> 
-                                <p class="headText1 headText">Username Id</p>
+                                <img class="follows" src="${user.avatar_url}" alt="User Name">
+                                <p class="headText1 headText">${user.login}</p>
                             </div>
                         </div>
 
                         <div class="div-followers">
                             <p class="follow">Followers</p>
                             <div class="div-follows">
-                                <img class="follows" src="./Icons/Rectangle 16.png" alt="User Name"> 
-                                <p class="headText1 headText">Username Id</p>
-                            </div>
-                            <div class="div-follows">
-                                <img class="follows" src="./Icons/Rectangle 16.png" alt="User Name"> 
-                                <p class="headText1 headText">Username Id</p>
-                            </div>
-                            <div class="div-follows">
-                                <img class="follows" src="./Icons/Rectangle 16.png" alt="User Name"> 
-                                <p class="headText1 headText">Username Id</p>
-                            </div>
-                            <div class="div-follows">
-                                <img class="follows" src="./Icons/Rectangle 16.png" alt="User Name"> 
-                                <p class="headText1 headText">Username Id</p>
+                                <img class="follows" src="${user.avatar_url}" alt="User Name">
+                                <p class="headText1 headText">${user.login}</p>
                             </div>
                         </div>
 
@@ -234,12 +207,14 @@ function fetchImages(searchQuery) {
                 <p class="titleName">Manage Cookies</p>
                 <p class="titleName">Do not share my personal information</p>
             </div>
-        </div>
-            `;
-        });
+        </div>`;
     });
 }
-fetchImages("");
+
+// Initial fetch
+fetchUser("");
+
+// Event listener for input
 searchInput.addEventListener("input", function () {
-  fetchImages(this.value.trim());
+    fetchUser(this.value.trim());
 });
