@@ -22,11 +22,12 @@ html {
 }
 
 .container {
-    padding: 2.5vw 0vw;
     padding-inline: 6vw;
     height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .title,
