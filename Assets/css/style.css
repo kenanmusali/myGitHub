@@ -78,6 +78,23 @@ html {
     align-items: center;
 }
 
+.div-following,
+.div-followers {
+    backdrop-filter: blur(15px);
+    background: rgba(163, 163, 163, 0.2);
+    border-radius: 14px;
+    -webkit-border-radius: 14px;
+    -moz-border-radius: 14px;
+    -ms-border-radius: 14px;
+    -o-border-radius: 14px;
+    margin-left: 0.7vw;
+    padding-inline: 1.5vw;
+    width: 16.5vw;
+    height: 18.3vw;
+    display: flex;
+    flex-direction: column;
+}
+
 .div-mail {
     backdrop-filter: blur(15px);
     background: rgba(163, 163, 163, 0.2);
@@ -110,7 +127,7 @@ html {
 
 .headName {
     font-weight: 600;
-   
+
 }
 
 .titleName {
@@ -312,18 +329,23 @@ html {
 .one1 {
     margin-right: 5.5vw;
 }
+
 .one2 {
     margin-right: 3.4vw;
 }
+
 .one3 {
     margin-right: 4.4vw;
 }
-.one4{
+
+.one4 {
     margin-right: 3.9vw;
 }
+
 .one5 {
     margin-right: 4.3vw;
 }
+
 .one6 {
     margin-right: 5.9vw;
 }
@@ -337,12 +359,15 @@ html {
     margin-left: 0vw;
     margin-right: 3.5vw;
 }
+
 .one9 {
     margin-left: 0vw;
     margin-right: 4.2vw;
 }
 
-.one8, .one9, .two1 {
+.one8,
+.one9,
+.two1 {
     margin-top: 2.8vw;
     margin-bottom: 1vw;
 }
@@ -357,4 +382,28 @@ html {
 
 .divAll {
     display: flex;
+}
+
+.div-follows {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.3vw;
+}
+
+.follows {
+    width: 2.5vw;
+    border: 1px solid #a1a1a1;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+}
+
+.follow {
+    font-weight: 600;
+    font-size: 0.9vw;
+    color: #747474;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
 }
