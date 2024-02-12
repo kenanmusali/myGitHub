@@ -199,10 +199,9 @@ function fetchUser() {
     });
 }
 
-// Initial fetch
+
 fetchUser("");
 
-// Event listener for input
 searchInput.addEventListener("input", function () {
     fetchUser(this.value.trim());
 });
