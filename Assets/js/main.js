@@ -1,14 +1,16 @@
 const postsElem = document.querySelector(".users");
 const searchInput = document.querySelector(".input");
 
-function fetchUser(searchQuery) {
-    let url = `https://api.github.com/users/${searchQuery}`;
+console.log(searchInput)
+function fetchUser() {
+    // const searchQuery = document.querySelector(".input").value
+    let url = `https://api.github.com/users/kenanmusali`;
 
     fetch(url)
     .then((res) => res.json())
     .then((user) => {
         postsElem.innerHTML = `
-               
+
             <div class="row bar1">
             <div class="title">
                 <div class="titleNames">
@@ -32,7 +34,6 @@ function fetchUser(searchQuery) {
         <div class="flex">
 
             <div class="firtFull-row">
-
                 <div class="row bar2">
                     <div class="search">
                         <input class="input" type="text" placeholder="Type here to search"> <img class="icon"
@@ -106,11 +107,8 @@ function fetchUser(searchQuery) {
                             <p class="text">${user.updated_at}</p>
                         </div>
                     </div>
-
-
                 </div>
             </div>
-
 
             <div class="secoundFull-row">
                 <div class="row bar">
@@ -168,31 +166,21 @@ function fetchUser(searchQuery) {
                         <div class="div-following">
                             <p class="follow">Following</p>
                             <div class="div-follows">
-                                <img class="follows" src="${user.avatar_url}" alt="User Name">
+                                <img class="follows" src="${user.avatar_url}" alt="Profile">
                                 <p class="headText1 headText">${user.login}</p>
                             </div>
                         </div>
 
-                        <div class="div-followers">
+                        <div class="div-followers"> 
                             <p class="follow">Followers</p>
                             <div class="div-follows">
-                                <img class="follows" src="${user.avatar_url}" alt="User Name">
+                                <img class="follows" src="${user.avatar_url}" alt="Profilee">
                                 <p class="headText1 headText">${user.login}</p>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
-
             </div>
-
-
-
-
-
-
-
 
         </div>
         <div class="row bar">
